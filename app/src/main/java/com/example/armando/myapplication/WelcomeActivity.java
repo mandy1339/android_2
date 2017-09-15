@@ -40,14 +40,9 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
 
-    public void display(String str) {
-        TextView outMessage = (TextView) findViewById(R.id.txt2);
-        outMessage.setText(str);
-    }
 
     // on click action for button
     public void onClickBtnUnlock(View view) {
-        display("view.getId() is: " + view.getId());
         Intent myIntent = new Intent(this, AccessControlActivity.class);
         startActivity(myIntent);
     }
