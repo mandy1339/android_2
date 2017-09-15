@@ -18,20 +18,26 @@ public class WelcomeActivity extends AppCompatActivity {
 
         // GET INTENT FROM ACCESS_CONTROL
         Intent intent2 = getIntent();
-        success = intent2.getStringExtra("SUCCESS");
+        success = intent2.getStringExtra("SUCCESS");        // set success string
+        displayLockStatus();
+    }
 
+
+    public void displayLockStatus() {
         if(success == null) {
             return;
         }
         if(success != null && success.equals("SUCCESS")) {
             Log.e("SUCCESS", "SUCCESS INTENT");
+            TextView txtView1 = (TextView) findViewById(R.id.txtView1);
+            txtView1.setText("The App is Unlocked");
         }
         else {
             Log.e("FAILURE", "FAILURE");
         }
-        Log.e("INTENT_RECEIVAL", success);
-    }
+        Log.e("INTENT_RECEIVE", success);
 
+    }
 
 
     public void display(String str) {
